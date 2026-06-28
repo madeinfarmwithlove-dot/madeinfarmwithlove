@@ -132,7 +132,12 @@ function renderProducts() {
     card.innerHTML = `
       <div class="product-img-box" onclick="openProductModal('${product.id}')" style="cursor: pointer;">
         ${product.video ? 
-          `<video src="${product.video}" autoplay loop muted playsinline poster="${product.image}"></video>` : 
+          `<div class="video-wrapper">
+             <video id="card-video-${product.id}" src="${product.video}" autoplay loop muted playsinline poster="${product.image}"></video>
+             <button class="video-play-pause-btn" onclick="toggleCardVideo(event, '${product.id}')" title="Play/Pause Video">
+               <span id="video-icon-${product.id}">⏸</span>
+             </button>
+           </div>` : 
           `<img src="${product.image}" alt="${product.name}">`
         }
         ${product.organic ? `<div class="organic-badge">🌿 Natural & Organic</div>` : ''}
@@ -527,4 +532,19 @@ function addModalItemToCart() {
   updateCartUI();
   closeProductModal();
   openCart();
+}
+
+function toggleCardVideo(event, productId) {
+  event.stopPropagation();
+  const video = document.getElementById(`card-video-${productId}`);
+  const icon = document.getElementById(`video-icon-${productId}`);
+  if (video) {
+    if (video.paused) {
+      video.play();
+      icon.innerText = '⏸';
+    } else {
+      video.pause();
+      icon.innerText = '▶';
+    }
+  }
 }
