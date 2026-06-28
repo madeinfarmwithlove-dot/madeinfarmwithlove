@@ -1,0 +1,24 @@
+[
+  {
+    "orderId": "MIF-062483",
+    "createdAt": "2026-06-28T12:51:02.483Z",
+    "customer": {
+      "name": "Neel Nitin Rathi",
+      "phone": "08551979101",
+      "address": "Tal. niphad. dist.nasik",
+      "pincode": "422304"
+    },
+    "items": [
+      {
+        "id": "cashews",
+        "name": "Royal King Cashews",
+        "weight": "250g",
+        "price": 380,
+        "quantity": 1,
+        "image": "images/cashews.jpg"
+      }
+    ],
+    "totalAmount": 380,
+    "status": "Pending WhatsApp Confirmation"
+  }
+]

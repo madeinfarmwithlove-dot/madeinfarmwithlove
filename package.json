@@ -1,0 +1,9 @@
+{
+  "name": "made-in-farm",
+  "version": "1.0.0",
+  "description": "Premium single-page web application for Made in Farm dry fruits brand with zero-dependency Node.js WhatsApp ordering backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
